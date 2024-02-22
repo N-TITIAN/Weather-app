@@ -41,7 +41,10 @@ header {
   line-height: 1;
   border-radius: 5px;
 }
-
+#icon{
+   width: 44px;
+  height: 44px;
+}
 main {
   padding: 30px 0;
 }

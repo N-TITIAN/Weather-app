@@ -23,6 +23,20 @@ function temp(response) {
 
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = city;
+  //hum
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  // wind speed
+  let windSpeedElement = document.querySelector("#wind-speed");
+  windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+  //discription
+  let descriptionElement = document.querySelector("#description");
+   descriptionElement.innerHTML = response.data.condition.description;
+   //icons
+   let iconElement = document.querySelector("#icon");
+   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+
 }
 
 function formatDate(date) {
@@ -51,6 +65,7 @@ function formatDate(date) {
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
 }
+//humidity
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
@@ -59,6 +74,7 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
+getWeather("paris");
 
 /*let apiKey = "b7t0a82d419b3c6081406ebbfco23a77";
 let city = search();
